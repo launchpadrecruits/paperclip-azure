@@ -207,9 +207,7 @@ module Paperclip
           begin
             log("saving #{path(style)}")
 
-            write_options = {
-              content_type: file.content_type,
-            }
+            write_options = {}
 
             if azure_container
               save_blob container_name, path(style).sub(%r{\A/},''), file, write_options
